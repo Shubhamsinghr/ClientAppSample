@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -16,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EditEventComponent } from './layout/event/edit-event/edit-event.component';
 import { ViewEventComponent } from './layout/event/view-event/view-event.component';
 import { AddEventComponent } from './layout/event/add-event/add-event.component';
+import { EventModuleComponent } from './layout/event/event-module/event-module.component';
 //import { NgGridModule } from ' ';
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { AddEventComponent } from './layout/event/add-event/add-event.component'
     AboutComponent,
     EditEventComponent,
     ViewEventComponent,
-    AddEventComponent
+    AddEventComponent,
+    EventModuleComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,26 @@
-<!-- <button type="button" [routerLink]="['/event/add']" class="btn btn-outline-dark right">Add Event</button> -->
-<!-- <ag-grid-angular 
-	style="width: 500px; height: 500px;" 
-	class="ag-theme-balham"
-	[rowData]="rowData" 
-	[columnDefs]="columnDefs">
-</ag-grid-angular>   -->
+<button type="button" (click)="navigateToAddEventPage()" class="btn btn-outline-dark right">Add Event</button>
+
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Place</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of eventsList; let index =i">
+        <td>{{event.eventName}}</td>
+        <td>{{event.eventDate}}</td>
+        <td>{{event.address}}</td>
+        <td (click)=editEvent(event,index)>Edit</td>
+        <td (click)=deleteEvent(event,index)>Delete</td>
+      </tr>
+       
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>

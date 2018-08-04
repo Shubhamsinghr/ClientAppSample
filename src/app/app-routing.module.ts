@@ -8,6 +8,7 @@ import { EventComponent } from './layout/event/event.component';
 import { EditEventComponent } from './layout/event/edit-event/edit-event.component';
 import { ViewEventComponent } from './layout/event/view-event/view-event.component';
 import { AddEventComponent } from './layout/event/add-event/add-event.component';
+import { EventModuleComponent } from './layout/event/event-module/event-module.component';
 
 export const routes: Routes = [
   {
@@ -28,7 +29,7 @@ export const routes: Routes = [
   },
   {
     path: 'event',
-    component: EventComponent,
+    component: EventModuleComponent,
     children:[
       {
         path: '',

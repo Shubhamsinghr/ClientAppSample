@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { debugOutputAstAsTypeScript } from '@angular/compiler';
-
+import { RouterModule, Routes , Router} from '@angular/router';
+import { EventServiceService } from './../../services/event-service.service';
+import { EventFormModel } from '../../model/event-form-model.model';
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
@@ -8,35 +10,47 @@ import { debugOutputAstAsTypeScript } from '@angular/compiler';
 })
 export class EventComponent implements OnInit {
 
-  constructor() { }
+  public eventsList: EventFormModel[]=[];
+
+constructor(private _Router:Router, private _EventServiceService:EventServiceService ) {
+  this._EventServiceService.saveEvent.subscribe(
+    (formData: any) => {
+        if(formData!= null) {
+         this.addFormToList(formData);
+    }
+  }
+)
+ }
+
 
   ngOnInit() {
+    debugger;
+    this.eventsList = this._EventServiceService.getEventsList();
   }
 
-  columnDefs = [
-		{headerName: 'Event', field: 'Event' },
-		{headerName: 'Date', field: 'Date' },
-    {headerName: 'Place', field: 'Place'},
-    {headerName: 'Edit', field: 'edit'},
-    {headerName: 'Delete', field: 'delete'},
-    {headerName: 'Action', field: 'delete'}
-	];
-
-	rowData = [
-		{ Event: 'Toyota', Date: '12/11/10', Place: 35000,edit:'Edit',delete : 'X' },
-		{ Event: 'Ford', Date: '12/11/10', Place: 32000 ,edit:'Edit',delete : 'X'},
-		{ Event: 'Porsche', Date: '12/11/10', Place: 72000 ,edit:'Edit',delete : 'X'}
-	];
+ 	
 
 
-  deleteEvent():void{
-debugger;
+  addFormToList(formData):void
+  {
+    this.eventsList = this._EventServiceService.getEventsList();
+    this.eventsList.push(formData); 
+    this._EventServiceService.setEventsList(this.eventsList);
+   }
 
+  navigateToAddEventPage(){
+    debugger;
+    this._Router.navigate(['/event/add']);
   }
 
-  addEvent():void{
-debugger;
+  deleteEvent(event,index):void{
+    this.eventsList.splice(index,1);
+  }
 
+ editEvent(event,index):void{
+  debugger;
+  // this.eventsList.splice(index,1, event)
+  this._Router.navigate(['/event/edit']);
   }
 
 }
