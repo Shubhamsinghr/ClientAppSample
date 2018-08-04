@@ -27,6 +27,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap-reboot.css",
+              "node_modules/bootstrap/dist/css/bootstrap-grid.css",
               "src/styles.scss"
             ],
             "scripts": [
@@ -79,7 +81,12 @@
             "karmaConfig": "src/karma.conf.js",
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/css/bootstrap.scss"
+              "node_modules/bootstrap/css/bootstrap.scss",
+              "./assets/css/flexslider.css",
+              "./assets/css/prettyPhoto.css",
+              "./assets/css/animate.css",
+              "./assets/css/owl.carousel.css",
+              "./assets/css/style.css"
             ],
             "scripts": [],
             "assets": [

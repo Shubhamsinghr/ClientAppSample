@@ -1,7 +1,30 @@
-<app-header></app-header>
-<!-- end home -->
-<!-- <div class="container"> -->
-        <router-outlet></router-outlet>
-<!-- </div> -->
-<!--  -->
-<app-footer></app-footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>White | responsive bootstrap3 html5 one page template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="~../../assets/images/favicon.ico">
+</head>
+<body>
+	<!-- PAGE -->
+	<div id="page">
+		<app-header></app-header>
+                	<!-- HOME -->
+		<section id="home" class="padbot0">
+				
+			<!-- TOP SLIDER -->
+			<div class="flexslider top_slider">
+                                <router-outlet></router-outlet>
+			</div>
+			<!-- //TOP SLIDER -->
+		</section><!-- //HOME -->
+	</div><!-- //PAGE -->
+
+	
+	<app-footer></app-footer>
+
+</body>
+</html>

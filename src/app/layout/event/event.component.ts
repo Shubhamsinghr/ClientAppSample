@@ -18,7 +18,7 @@ export class EventComponent implements OnInit {
 		{headerName: 'Date', field: 'Date' },
     {headerName: 'Place', field: 'Place'},
     {headerName: 'Edit', field: 'edit'},
-    {headerName: 'Delete', field: 'delete'}
+    {headerName: 'Delete', field: 'delete'},
     {headerName: 'Action', field: 'delete'}
 	];
 

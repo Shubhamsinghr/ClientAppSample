@@ -9,7 +9,7 @@ import { EditEventComponent } from './layout/event/edit-event/edit-event.compone
 import { ViewEventComponent } from './layout/event/view-event/view-event.component';
 import { AddEventComponent } from './layout/event/add-event/add-event.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: HomeComponent
