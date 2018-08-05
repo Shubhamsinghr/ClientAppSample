@@ -16,6 +16,20 @@ import { EditEventComponent } from './layout/event/edit-event/edit-event.compone
 import { ViewEventComponent } from './layout/event/view-event/view-event.component';
 import { AddEventComponent } from './layout/event/add-event/add-event.component';
 import { EventModuleComponent } from './layout/event/event-module/event-module.component';
+import { ToastrModule } from 'ngx-toastr';
+import { EventServiceService } from './services/event-service.service';
+import { HttpClientModule } from '@angular/common/http';
+
+
+// export class CustomOption extends ToastOptions {
+//   animate = 'flyRight'; // you can override any options available
+//   newestOnTop = false;
+//   showCloseButton = true;
+// }
+
+// // app.module.ts
+// import { CustomOption } from 'custom-option';
+
 //import { NgGridModule } from ' ';
 @NgModule({
   declarations: [
@@ -37,10 +51,10 @@ import { EventModuleComponent } from './layout/event/event-module/event-module.c
     AppRoutingModule,
     ReactiveFormsModule,
     AgGridModule.withComponents([]),
-    NgbModule.forRoot()
-    //NgGridModule
+    NgbModule.forRoot(),ToastrModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EventServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

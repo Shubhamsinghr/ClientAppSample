@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ClientApp.Models;
+
 
 namespace ClientApp.Controllers
 {
@@ -11,9 +13,15 @@ namespace ClientApp.Controllers
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        [Route("GetEventsList")]  
+        public IEnumerable<string> GetEventsList()
         {
-            return new string[] { "value1", "value2" };
+            List< EventModel> events = new List<EventModel>();
+            addresseventsList.Add(new EventModel() {  EventName = "Calvin",EventDate = "12 Aug 2017", Address ="Main Street"});
+            addresseventsList.Add(new EventModel() {  EventName = "Calvin",EventDate = "12 Aug 2017", Address ="Main Street"});
+            addresseventsList.Add(new EventModel() {  EventName = "Calvin",EventDate = "12 Aug 2017", Address ="Main Street"});
+
+            return events;
         }
 
         // GET api/values/5

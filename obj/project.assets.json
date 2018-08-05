@@ -12540,11 +12540,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LALAN-PC\\Desktop\\New folder\\ClientApp\\ClientAppSample\\ClientApp.csproj",
+      "projectUniqueName": "F:\\shubham''\\ClientApp\\ClientApp.csproj",
       "projectName": "ClientApp",
-      "projectPath": "C:\\Users\\LALAN-PC\\Desktop\\New folder\\ClientApp\\ClientAppSample\\ClientApp.csproj",
+      "projectPath": "F:\\shubham''\\ClientApp\\ClientApp.csproj",
       "packagesPath": "C:\\Users\\LALAN-PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LALAN-PC\\Desktop\\New folder\\ClientApp\\ClientAppSample\\obj\\",
+      "outputPath": "F:\\shubham''\\ClientApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { EventServiceService } from './../../../services/event-service.service';
 import { EventFormModel } from '../../../model/event-form-model.model';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-event',
@@ -16,8 +17,10 @@ export class AddEventComponent implements OnInit {
   public registerForm: FormGroup;
   public submitted = false;
 
-  constructor(private _Router:Router, private formBuilder: FormBuilder, private _EventServiceService:EventServiceService) { }
-
+//   constructor(private _Router:Router, private formBuilder: FormBuilder, private _EventServiceService:EventServiceService) { }
+  constructor( private toastr: ToastrService,private _Router:Router, private formBuilder: FormBuilder, private _EventServiceService:EventServiceService) { 
+    
+  }
   ngOnInit() {
     debugger;
       this.registerForm = this.formBuilder.group({
@@ -27,8 +30,13 @@ export class AddEventComponent implements OnInit {
       });
   }
 
+  showSuccess() {
+    this.toastr.success('Event added Successfully!', 'Success!');
+  }
+
+  
   // convenience getter for easy access to form fields
-  // get f() { return this.registerForm.controls; }
+  get f() { return this.registerForm.controls; }
 
   onSubmit() {
       this.submitted = true;
@@ -37,6 +45,7 @@ export class AddEventComponent implements OnInit {
           return;
       }
       this._EventServiceService.onSaveEventForm(this.eventForm);
+      this.showSuccess();
       this._Router.navigate(['/event']);
 
   }
